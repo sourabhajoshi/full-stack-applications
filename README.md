@@ -211,5 +211,5 @@ By finishing these 10 projects you will:
 - Learn **DevOps** → Docker, CI/CD, deployment, monitoring  
 - Cover **sub-techs** → Payments, WebRTC, ML APIs, Elasticsearch, Celery  
 
-🔥 These projects are enough for **portfolio + real-world readiness**.  
+These projects are enough for **portfolio + real-world readiness**.  
 
