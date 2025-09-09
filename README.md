@@ -1,215 +1,197 @@
-# Full-Stack Upskilling Roadmap (Vue 3 + DRF)
+# Full-Stack Project Roadmap (Vue 3 + Quasar + Django REST Framework)
 
-This roadmap contains **10 full-stack projects** designed to help you master **Frontend (Vue/React)**, **Backend (Django REST Framework)**, and **DevOps/Other sub-techs**.  
+This repository contains 10 full-stack applications built with Vue 3 (Quasar) on the frontend and Django REST Framework on the backend.
 
 Each project focuses on **different problem domains** and introduces **new sub-techs** to cover real-world scenarios.
 
 ---
+## Project List
 
-## 1. Advanced Task Manager (Trello/Jira Clone)
+## 1. Authentication System
+**Features**
+- JWT login, register, logout  
+- Profile management  
+- Role-based access (admin, user, manager)  
 
-- **Features:**
-  - CRUD tasks, boards, lists
-  - Drag & drop Kanban UI
-  - User authentication (JWT)
-  - Role-based permissions
+**Skills**
+- DRF SimpleJWT authentication  
+- Pinia store for tokens  
+- Vue Router guards  
 
-- **Skills:**  
-  - Vue/React drag & drop  
-  - DRF ViewSets + serializers  
-  - JWT authentication  
-  - PostgreSQL schema design  
+**Sub-techs**
+- Refresh tokens  
+- Role-based permissions middleware  
 
-- **Sub-techs:**  
-  - WebSockets (real-time board updates)  
-  - Celery (background task reminders)  
+## 2. E-Commerce Platform
+**Features**
+- Product catalog & search  
+- Cart, checkout, and order history  
+- User reviews & ratings  
+- Admin dashboard  
 
----
+**Skills**
+- DRF ViewSets & filtering  
+- Vue 3 forms & validation  
+- State management for cart  
 
-## 2. Multi-User Blogging Platform (Medium Clone)
+**Sub-techs**
+- Stripe/PayPal integration  
+- Redis caching for products  
+- Recommendation engine (basic ML)  
 
-- **Features:**  
-  - Rich-text editor, markdown support  
-  - Tags, categories, search  
-  - Likes, comments  
-  - User roles (writer, editor, admin)  
+## 3. Chat + Video Calling App
+**Features**
+- Real-time chat (1:1 and groups)  
+- File sharing in chat  
+- Notifications (browser & in-app)  
+- Video calling with WebRTC  
 
-- **Skills:**  
-  - Rich-text/Markdown editor (Quill/TipTap)  
-  - DRF nested serializers  
-  - Vue Router + Pinia state  
+**Skills**
+- Django Channels (WebSockets)  
+- Vue state management for live updates  
+- WebRTC peer connections  
 
-- **Sub-techs:**  
-  - Search (Elasticsearch / Django Haystack)  
-  - Infinite scroll  
+**Sub-techs**
+- Push notifications  
+- Chat persistence in PostgreSQL  
 
----
+## 4. Hospital Management System
+**Features**
+- Manage patients, doctors, and appointments  
+- Role-based dashboards (doctor, nurse, admin)  
+- Medical record tracking  
 
-## 3. Chat + Video Calling App (Slack/Discord Lite)
+**Skills**
+- Secure data modeling in DRF  
+- Role-based serializers & permissions  
+- Vue forms & validation  
 
-- **Features:**  
-  - Real-time chat (groups & 1:1)  
-  - File sharing in chat  
-  - Notifications (in-app + browser push)  
-  - 1:1 video call with WebRTC  
+**Sub-techs**
+- Audit logs  
+- Role-based dashboards  
 
-- **Skills:**  
-  - WebSockets (Django Channels)  
-  - State management for live updates  
-  - Vue/React component optimization  
+## 5. College / Learning Management System
+**Features**
+- Course creation & enrollment  
+- Video and file uploads  
+- Progress tracking  
+- Paid/free courses  
 
-- **Sub-techs:**  
-  - WebRTC (video calling)  
-  - Push notifications  
+**Skills**
+- DRF file uploads  
+- Role-based authentication (student, instructor)  
+- Vue Router navigation  
 
----
+**Sub-techs**
+- Video storage in S3/Cloud  
+- Payment integration  
+- Progress tracking models  
 
-## 4. E-Commerce Platform
+## 6. Fraud Detection System
+**Features**
+- Transaction ingestion  
+- Anomaly detection alerts  
+- Fraud detection dashboard  
 
-- **Features:**  
-  - Product catalog, cart, checkout  
-  - User reviews & ratings  
-  - Payments (Stripe/PayPal)  
-  - Admin dashboard  
+**Skills**
+- DRF for transaction APIs  
+- ML anomaly detection (Scikit-learn/TensorFlow)  
+- Vue alert system  
 
-- **Skills:**  
-  - Vue 3 forms & validation  
-  - DRF permissions & filtering  
-  - Cart logic in state management  
+**Sub-techs**
+- Celery for async detection tasks  
+- Redis for caching transactions  
 
-- **Sub-techs:**  
-  - Redis caching  
-  - Recommendation engine (basic ML)  
+## 7. Job Board + Resume Builder
+**Features**
+- Job postings & applications  
+- Search & filter jobs  
+- Resume upload & parsing  
+- Resume builder with PDF export  
 
----
+**Skills**
+- File handling in DRF  
+- PDF generation (ReportLab/WeasyPrint)  
+- Vue form builder  
 
-## 5. Real-Time Stock/Weather Dashboard
+**Sub-techs**
+- Full-text search (Elasticsearch/Postgres)  
+- Async resume parsing  
 
-- **Features:**  
-  - Live financial or weather data  
-  - Interactive charts & graphs  
-  - Custom alerts/notifications  
+## 8. IoT Waste Management
+**Features**
+- IoT sensor data ingestion  
+- Bin fill-level tracking  
+- Map visualization of bins  
 
-- **Skills:**  
-  - External APIs integration  
-  - Data visualization (Recharts/D3.js)  
-  - Polling vs WebSockets  
+**Skills**
+- DRF APIs for IoT devices  
+- Vue map integration (Leaflet/Mapbox)  
+- Real-time sensor updates  
 
-- **Sub-techs:**  
-  - Caching with Redis  
-  - Celery for scheduled tasks  
-
----
-
-## 6. Learning Management System (Udemy Clone)
-
-- **Features:**  
-  - Course creation & enrollment  
-  - Video & file uploads  
-  - Progress tracking  
-  - Paid/free courses  
-
-- **Skills:**  
-  - File uploads (DRF + S3/GCS)  
-  - Role-based auth (student, instructor)  
-  - Payment integration  
-
-- **Sub-techs:**  
-  - Video storage (S3/Cloud)  
-  - Progress tracking models  
-
----
-
-## 7. Crowdfunding Platform (Kickstarter Clone)
-
-- **Features:**  
-  - Project listings with funding goals  
-  - Pledges & transactions  
-  - Commenting system  
-  - Project updates  
-
-- **Skills:**  
-  - Payment workflows  
-  - DRF serializers with custom logic  
-  - Vue state for progress bars  
-
-- **Sub-techs:**  
-  - Celery for funding notifications  
-  - Email service integration  
-
----
-
-## 8. Job Board + Resume Builder
-
-- **Features:**  
-  - Job postings & applications  
-  - Search/filter jobs  
-  - Resume upload & parsing  
-  - Resume builder (download as PDF)  
-
-- **Skills:**  
-  - File handling in DRF  
-  - PDF generation (ReportLab)  
-  - Search filters  
-
-- **Sub-techs:**  
-  - Full-text search (Elasticsearch/Postgres)  
-  - Async resume parsing  
-
----
+**Sub-techs**
+- MQTT or REST ingestion  
+- Celery for batch data processing  
 
 ## 9. Social Media Analytics Dashboard
+**Features**
+- OAuth integration with Twitter, GitHub, LinkedIn  
+- Data aggregation & visualization  
+- Scheduled data refresh  
 
-- **Features:**  
-  - Integrations with APIs (Twitter, GitHub, LinkedIn)  
-  - Data aggregation & charts  
-  - Scheduled data refresh  
+**Skills**
+- OAuth 2.0 in DRF  
+- Chart libraries in Vue (Recharts/D3.js)  
+- Aggregation queries in PostgreSQL  
 
-- **Skills:**  
-  - OAuth integrations  
-  - DRF background jobs  
-  - Chart libraries  
-
-- **Sub-techs:**  
-  - Celery for periodic data fetch  
-  - Caching results  
-
----
+**Sub-techs**
+- Celery for periodic API fetch  
+- Redis for caching results
 
 ## 10. Video Streaming + Recommendation Platform
+**Features**
+- Video upload & streaming (HLS/Dash)  
+- Comments & likes  
+- Recommendation engine  
 
-- **Features:**  
-  - Video upload & streaming (HLS/Dash)  
-  - Comments & likes  
-  - Recommendation engine  
+**Skills**
+- DRF file uploads  
+- Vue video player integration  
+- ML recommendation logic  
 
-- **Skills:**  
-  - DRF file uploads  
-  - Vue video player integration  
-  - Recommendation logic  
+**Sub-techs**
+- FFmpeg + Celery for transcoding  
+- CDN integration for streaming  
 
-- **Sub-techs:**  
-  - FFmpeg + Celery (video transcoding)  
-  - CDN integration  
+---
+## Tech Stack
+
+**Frontend**  
+- Vue 3 (Composition API)  
+- Quasar Framework (UI Components)  
+- Pinia (State Management)  
+- Axios (API Calls)  
+- Recharts / D3.js (Charts)  
+
+**Backend**  
+- Django 5 + Django REST Framework  
+- Django Channels (WebSockets)  
+- Celery (Async tasks)  
+- Redis (Cache + Broker)  
+- PostgreSQL (Database)  
+
+**Other Tools**  
+- Docker & Docker Compose  
+- GitHub Actions (CI/CD)  
+- Nginx + Gunicorn (Deployment)  
+- S3/Cloud Storage (Media & Videos)  
 
 ---
 
-# Extra Optional Projects
-
-- **GraphQL API project** (DRF + Graphene/Ariadne)  
-- **AI-powered app** (DRF + OpenAI API integration)  
-- **Microservices project** (Split DRF into services, add FastAPI)  
-- **Serverless app** (AWS Lambda / Vercel functions)  
-
----
-
-# Outcome
-
-By finishing these 10 projects you will:  
-- Master **Vue 3/React** → state, performance, real-time UIs  
-- Master **DRF** → auth, async, WebSockets, caching, file handling  
-- Learn **DevOps** → Docker, CI/CD, deployment, monitoring  
-- Cover **sub-techs** → Payments, WebRTC, ML APIs, Elasticsearch, Celery  
-
-These projects are enough for **portfolio + real-world readiness**.  
+## Learning Outcomes
+By completing these 10 apps, you will:  
+- Master **Vue 3 (Quasar)** → state management, forms, real-time UIs  
+- Master **Django REST Framework** → auth, async, file handling, caching  
+- Learn **DevOps practices** → Docker, CI/CD, deployment, monitoring  
+- Gain experience in **sub-techs** → Payments, WebRTC, ML APIs, FF
 
