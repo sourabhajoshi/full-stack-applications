@@ -5,6 +5,7 @@ This repository contains 10 full-stack applications built with Vue 3 (Quasar) on
 Each project focuses on **different problem domains** and introduces **new sub-techs** to cover real-world scenarios.
 
 ---
+
 ## Project List
 
 ## 1. Authentication System
@@ -187,6 +188,21 @@ Each project focuses on **different problem domains** and introduces **new sub-t
 - S3/Cloud Storage (Media & Videos)  
 
 ---
+
+## Projects Overview
+
+| #  | Project | Features | Skills | Sub-techs |
+|----|---------|----------|--------|-----------|
+| 1  | Authentication System | JWT login, register, roles, profile | DRF SimpleJWT, Vue route guards, Pinia auth store | Refresh tokens, role-based permissions |
+| 2  | E-Commerce Platform | Catalog, cart, checkout, reviews, admin | DRF ViewSets, Vue forms, cart state management | Stripe/PayPal, Redis cache, ML recommendations |
+| 3  | Chat + Video Calling | Real-time chat, file sharing, notifications, WebRTC | Django Channels, Vue live updates, WebRTC | Push notifications, PostgreSQL persistence |
+| 4  | Hospital Management System | Patients, doctors, appointments, records | Secure DRF models, role-based serializers | Audit logs, dashboards |
+| 5  | College / LMS | Courses, enrollment, uploads, tracking | DRF file uploads, role-based auth | S3/Cloud storage, payments |
+| 6  | Fraud Detection System | Transactions, anomaly alerts | DRF APIs, ML anomaly detection | Celery workers, Redis cache |
+| 7  | Job Board + Resume Builder | Job posts, resume upload & parsing, PDF builder | File handling, PDF generation | Elasticsearch search, async parsing |
+| 8  | IoT Waste Management | Sensor data ingestion, bin fill levels, maps | DRF APIs, Vue maps (Leaflet/Mapbox) | MQTT ingestion, Celery batch jobs |
+| 9  | Social Media Analytics Dashboard | OAuth API integration, charts, scheduled refresh | OAuth, DRF aggregation, Vue charts | Celery for periodic jobs, caching |
+| 10 | Video Streaming + Recommendation | Video upload/streaming, comments, rec engine | DRF file uploads, Vue video player, ML | FFmpeg + Celery transcoding, CDN |
 
 ## Learning Outcomes
 By completing these 10 apps, you will:  
