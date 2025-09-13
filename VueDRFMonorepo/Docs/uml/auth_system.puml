@@ -1,0 +1,56 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class User {
+    + id: int (PK)
+    + username: str
+    + email: str (unique)
+    + password: str
+    + is_active: bool
+    + is_staff: bool
+    + is_superuser: bool
+}
+
+class Profile {
+    + id: int (PK)
+    + user_id: FK(User)
+    + first_name: str
+    + last_name: str
+    + phone_number: str
+    + avatar_url: str
+    + bio: text
+    + updated_at: datetime
+}
+
+class Role {
+    + id: int (PK)
+    + name: str (unique)
+    + description: text
+}
+
+class UserRole {
+    + id: int (PK)
+    + user_id: FK(User)
+    + role_id: FK(Role)
+    + assigned_at: datetime
+}
+
+class Permission {
+    + id: int (PK)
+    + name: str (unique)
+    + description: text
+}
+
+class RolePermission {
+    + id: int (PK)
+    + role_id: FK(Role)
+    + permission_id: FK(Permission)
+}
+
+' Relationships
+User "1" -- "1" Profile
+User "1" -- "*" UserRole
+Role "1" -- "*" UserRole
+Role "1" -- "*" RolePermission
+Permission "1" -- "*" RolePermission
+@enduml
