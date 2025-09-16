@@ -2,5 +2,5 @@ from django.urls import path
 from .views import hello
 
 urlpatterns = [
-    path('hello/', hello),  # reachable at /api/hello/
+    path('', hello),  # reachable at /api/hello/
 ]

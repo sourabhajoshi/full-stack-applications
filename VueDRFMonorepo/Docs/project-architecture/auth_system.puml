@@ -1,0 +1,109 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+' =========================
+' Database Tables
+' =========================
+package "Database Tables" {
+    class User {
+        + id: int (PK)
+        + username: str
+        + email: str (unique)
+        + password: str
+        + is_active: bool
+        + is_staff: bool
+        + is_superuser: bool
+    }
+
+    class Profile {
+        + id: int (PK)
+        + user_id: FK(User)
+        + first_name: str
+        + last_name: str
+        + phone_number: str
+        + avatar_url: str
+        + bio: text
+        + updated_at: datetime
+    }
+
+    class Role {
+        + id: int (PK)
+        + name: str (unique)
+        + description: text
+    }
+
+    class UserRole {
+        + id: int (PK)
+        + user_id: FK(User)
+        + role_id: FK(Role)
+        + assigned_at: datetime
+    }
+
+    class Permission {
+        + id: int (PK)
+        + name: str (unique)
+        + description: text
+    }
+
+    class RolePermission {
+        + id: int (PK)
+        + role_id: FK(Role)
+        + permission_id: FK(Permission)
+    }
+
+    ' Relationships
+    User "1" -- "1" Profile
+    User "1" -- "*" UserRole
+    Role "1" -- "*" UserRole
+    Role "1" -- "*" RolePermission
+    Permission "1" -- "*" RolePermission
+}
+
+' =========================
+' API / Backend
+' =========================
+package "DRF API" {
+    class "POST /login_or_register/" as LoginAPI
+    class "GET /dashboard/" as DashboardAPI
+}
+
+' =========================
+' Frontend
+' =========================
+package "Frontend (Vue 3 + Pinia)" {
+    class "Login Page"
+    class "Dashboard Page"
+    class "Pinia Store (Tokens)"
+}
+
+' =========================
+' Flow Connections
+' =========================
+
+' 1. User enters credentials
+LoginAPI --> User : Check if user exists (SELECT email)
+LoginAPI --> User : If not exists, create user (INSERT row)
+LoginAPI --> Profile : Create profile row (INSERT)
+LoginAPI --> UserRole : Optional assign default role
+LoginAPI --> RolePermission : Optional fetch permissions for role
+
+' 2. Generate JWT
+LoginAPI --> "Pinia Store (Tokens)" : Return access & refresh token + user info
+
+' 3. Frontend stores token
+"Pinia Store (Tokens)" --> DashboardAPI : Attach access token in request
+
+' 4. Backend validates JWT
+DashboardAPI --> User : Identify user by token
+DashboardAPI --> UserRole : Get roles
+DashboardAPI --> RolePermission : Check permissions
+DashboardAPI --> Profile : Return user profile info
+
+' 5. Frontend renders
+DashboardAPI --> "Dashboard Page" : Show personalized dashboard
+
+' Frontend navigation
+"Login Page" --> LoginAPI : Submit credentials
+"Dashboard Page" --> "Pinia Store (Tokens)" : Access token required
+@enduml
