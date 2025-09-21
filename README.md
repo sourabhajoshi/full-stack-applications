@@ -1,4 +1,4 @@
-# Full-Stack Project Roadmap (Vue 3 + Quasar + Django REST Framework)  
+# Full-Stack Project Roadmap (Vue3 + Quasar + Django REST Framework)  
 
 This repository contains 10 full-stack applications built with Vue 3 (Quasar) on the frontend and Django REST Framework on the backend.
 
